@@ -96,33 +96,35 @@ document.addEventListener('DOMContentLoaded', loadNewsData);
 function toggleFullScreen() {
     const container = document.getElementById('newsTableContainer');
     
+    if (!container) {
+        console.error('找不到newsTableContainer元素');
+        return;
+    }
+
     if (!document.fullscreenElement) {
         // 進入全螢幕
         if (container.requestFullscreen) {
             container.requestFullscreen();
         } else if (container.webkitRequestFullscreen) {
             container.webkitRequestFullscreen();
+        } else if (container.mozRequestFullScreen) {
+            container.mozRequestFullScreen();
         } else if (container.msRequestFullscreen) {
             container.msRequestFullscreen();
         }
-        
-        // 調整全螢幕時的樣式
-        container.style.backgroundColor = 'white';
-        container.style.padding = '20px';
-        container.style.width = '100%';
-        container.style.height = '100%';
     } else {
         // 退出全螢幕
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.webkitExitFullscreen) {
             document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
     }
 }
-
 
 // 監聽全螢幕變化
 document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -137,6 +139,5 @@ function handleFullscreenChange() {
         container.style.backgroundColor = '';
         container.style.padding = '';
         container.style.width = '70%';
-        container.style.height = '';
     }
 }
