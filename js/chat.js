@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendButton = document.getElementById('sendButton');
     const modelSelect = document.getElementById('modelSelect');
 
-    let messageHistory = [];
+    let messageHistory = [{
+        role: "system",
+        content: "你是一個AI助手。請始終使用繁體中文回答問題，即使用戶使用其他語言提問。請保持專業、友善且詳細的回答方式。"
+    }];
 
     function addMessage(content, isUser = false) {
         const messageDiv = document.createElement('div');
@@ -16,10 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         chatBox.appendChild(messageDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
 
-        messageHistory.push({
-            role: isUser ? "user" : "assistant",
-            content: content
-        });
+        // 只有用戶消息和助手消息加入歷史，系統消息已經在初始化時加入
+        if (isUser || content.startsWith('抱歉')) {
+            messageHistory.push({
+                role: isUser ? "user" : "assistant",
+                content: content
+            });
+        }
     }
 
     async function sendMessage() {
