@@ -213,53 +213,30 @@
             <div class="container">
                 <!-- Featured Publications Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+
                     <div class="col-xl-4 col-lg-5">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Publications</h4>
+                            <h4>Hero Stock</h4>
                             <p class="text-black-50 mb-0"></p>
                         </div>
                     </div>
-                    <div class="mx-auto text-center">
-                        <h2 class="text-white mb-4"></h2>
-                        <table class="table table-light align-items-center table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Conference/Institute</th>
-                                    <th>PDF</th>
-                                    <th>Code</th>
-                                    <th>Author/Co-author</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>Knowledge Update in Full Text Triggered by a News Event</b></td>
-                                    <td>Master's Thesis @ <br>Department of Computer Science, <br> National Chengchi University</td>
-                                    <td><a href="https://drive.google.com/file/d/1RzfgyGdtvYvein9Z34xLVSlGLViz_UH9/view?usp=sharing" target="_blank"><b>[PDF]</b></td>
-                                    <td><a href="https://github.com/theQuert/Event-Triggered-Article-Updating-System" target="_blank"><b>[Code]</b></td>
-                                    <td><b>Yu-Ting Lee</b></td>
-                                    <td>October 2023</td>
-                                </tr>
-                                <tr>
-                                    <td><b>A Multi-grained Dataset for News Event Triggered Knowledge Update</b></td>
-                                    <td>ACM International Conference on Information and Knowledge Management (CIKM 2022)</td>
-                                    <td><a href="https://dl.acm.org/doi/10.1145/3511808.3557537" target="_blank"><b>[PDF]</b></td>
-                                    <td><a href="https://github.com/hhhuang/NetKu" target="_blank"><b>[Code]</b></td>
-                                    <td><b>Yu-Ting Lee</b>, Ying-Jhe Tang, Yu-Chung Cheng, Pai-Lin Chen, Tsai-Yen Li and Hen-Hsen Huang</td>
-                                    <td>17 October 2022</td>
-                                </tr>
-                                <tr>
-                                    <td><b>A Sentiment Analysis Method based on a Transformer and a Recurrent Neural Network</b></td>
-                                    <td>National Taiwan University Management Reviews: 1st Management and Medical Sciences Interdisciplinary Conference</td>
-                                    <td><a href="https://github.com/theQuert/inlpfun/blob/master/MOST_NTU_project/abs/final/Sentiment_Analysis.pdf" target="_blank"><b>[PDF]</b></td>
-                                    <td><a href="https://github.com/theQuert/NLP-sentiment-analysis" target="_blank"><b>[Code]</b></td>
-                                    <td><b>Yu-Ting Lee</b>, Yen-Ching Chang, Wei-Syuan Guo and Jhomg-Chen Cao</td>
-                                    <td>November 2020</td>
-                                </tr>
 
-                            </tbody>
-                        </table>
+                    <!-- chatgpt -->
+                    <div class="chat-container" id="chatContainer">
+                        <div class="chat-box" id="chatBox">
+                            <!-- 聊天訊息將在這裡顯示 -->
+                        </div>
+                        <div class="chat-input">
+                            <textarea id="userInput" placeholder="請輸入您的問題..."></textarea>
+                            <select id="modelSelect" class="form-control">
+                                <option value="gpt-4o">GPT-4O</option>
+                                <option value="gpt-4o-mini">GPT-4O-Mini</option>
+                            </select>
+                            <button id="sendButton" class="btn btn-primary">發送</button>
+                        </div>
+                    </div>
+
+
                     <div class="featured-text text-center text-lg-left">
                         <h2 class="text-white mb-4">t</h2>
                         <h4>Academic Services & Invited Talks</h4>
@@ -509,6 +486,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <!-- chatgpt -->
+        <script src="js/chat.js"></script>
+        <!-- 全螢幕功能 -->
         <script>
             function toggleFullScreen() {
                 const container = document.getElementById('newsTableContainer');
@@ -559,5 +539,6 @@
                 }
             }
         </script>
+        
     </body>
 </html>
