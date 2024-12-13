@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
         <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -175,79 +176,26 @@
                             <p class="text-black-50 mb-0"></p>
                         </div>
                     </div>
+
+                    <!-- READ CSV -->
                     <div class="mx-auto text-center">
-                        <h2 class="text-white mb-4"></h2>
-                        <table class="table table-light align-items-center table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Title</th>
-                                    <th>Description</th>
-                                    <th>Language</th>
-                                    <th>Stars</th>
-                                    <th>Forks</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code><a href="https://github.com/theQuert/Event-Triggered-Article-Updating-System" target="_blank"><b>Event-Triggered-Article-Updating-System</b></code></td>
-                                    <td>Event Triggered Article Updating System</td>
-                                    <td>Python, PyTorch, Shell, Gradio</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/Lightning-AI/lit-llama" target="_blank"><b>Lightning-AI/lit-llama</b></code></td>
-                                    <td>Debugging the source code related to fine-tune LLaMA</td>
-                                    <td>Python, PyTorch, PyTorch-Lightning</td>
-                                    <td>5.6k</td>
-                                    <td>486</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/hhhuang/NetKu" target="_blank"><b>hhhuang/NetKu</b></code></td>
-                                    <td>A Multi-grained Dataset for News Event Triggered Knowledge Update</td>
-                                    <td>Python, PyTorch, Shell</td>
-                                    <td>2</td>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/thequert/inlpfun" target="_blank"><b>iNLPfun</b></code></td>
-                                    <td>NLP related scripts</td>
-                                    <td>Python, PyTorch</td>
-                                    <td>3</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/theQuert/G4G-Hiring-Data-Science" target="_blank"><b>G4G-Hiring-Data-Science</b></code></td>
-                                    <td>Hackathon - GeeksforGeeks Hiring Data Science: Scraping data from YouTube and Analyzing</td>
-                                    <td>Python, NumPy</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/theQuert/XPS-9360-macOS" target="_blank"><b>XPS-9360-macOS</b></code></td>
-                                    <td>Hackintosh on Dell XPS 13 9360</td>
-                                    <td>C++, Shell, Python</td>
-                                    <td>180</td>
-                                    <td>34</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/theQuert/COVID-Tweets-Summ" target="_blank"><b>COVID-Tweets-Summ</b></code></td>
-                                    <td>Specific-Aspect Summarization on News According to Social Sentiments</td>
-                                    <td>Python, Hugging Face, PyTorch</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td><code><a href="https://github.com/theQuert/NLP-sentiment-analysis" target="_blank"><b>NLP-sentiment-analysis</b></code></td>
-                                    <td>Sentiment Analysis models with multiple algorithms on movie reviews</td>
-                                    <td>Python, Jupyter</td>
-                                    <td>2</td>
-                                    <td>2</td>
-                                </tr> 
-
-                            </tbody>
-                        </table>
-
+                        <h2 class="text-white mb-4">最新新聞</h2>
+                        <div style="max-height: 400px; overflow-y: auto;">
+                            <table class="table table-light align-items-center table-striped" id="newsTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th style="width: 50%">標題</th>
+                                        <th>時間</th>
+                                        <th>來源</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 將由JavaScript填充 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
         <!-- Publications-->
         <section class="publicaions-section bg-light" id="publications">
             <div class="container">

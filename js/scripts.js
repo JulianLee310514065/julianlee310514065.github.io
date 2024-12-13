@@ -54,3 +54,40 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+
+// ... existing code ...
+
+// 添加新聞數據載入功能
+async function loadNewsData() {
+    try {
+        const response = await fetch('tests.csv');
+        const csvText = await response.text();
+        
+        Papa.parse(csvText, {
+            header: true,
+            complete: function(results) {
+                const tableBody = document.querySelector('#newsTable tbody');
+                
+                tableBody.innerHTML = results.data
+                    .filter(row => row.ID && row.Title) // 過濾掉空行
+                    .map(row => `
+                        <tr>
+                            <td>${row.ID}</td>
+                            <td style="text-align: left">${row.Title}</td>
+                            <td>${row.Time}</td>
+                            <td>${row.Source}</td>
+                        </tr>
+                    `).join('');
+            },
+            error: function(error) {
+                console.error('Error parsing CSV:', error);
+            }
+        });
+    } catch (error) {
+        console.error('Error loading CSV:', error);
+    }
+}
+
+// 當文檔加載完成時執行
+document.addEventListener('DOMContentLoaded', loadNewsData);

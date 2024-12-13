@@ -10364,3 +10364,56 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+/* 表格容器樣式 */
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+
+/* 表格樣式 */
+#newsTable {
+  width: 100%;
+  background: white;
+  margin-bottom: 0;
+}
+
+#newsTable th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  z-index: 1;
+  padding: 12px;
+}
+
+#newsTable td {
+  padding: 12px;
+  vertical-align: middle;
+}
+
+/* 標題單元格樣式 */
+#newsTable td:nth-child(2) {
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 滾動條樣式 */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
