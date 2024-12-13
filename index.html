@@ -509,5 +509,55 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            function toggleFullScreen() {
+                const container = document.getElementById('newsTableContainer');
+                
+                if (!container) {
+                    console.error('找不到newsTableContainer元素');
+                    return;
+                }
+            
+                if (!document.fullscreenElement) {
+                    // 進入全螢幕
+                    if (container.requestFullscreen) {
+                        container.requestFullscreen();
+                    } else if (container.webkitRequestFullscreen) {
+                        container.webkitRequestFullscreen();
+                    } else if (container.mozRequestFullScreen) {
+                        container.mozRequestFullScreen();
+                    } else if (container.msRequestFullscreen) {
+                        container.msRequestFullscreen();
+                    }
+                } else {
+                    // 退出全螢幕
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    }
+                }
+            }
+            
+            // 監聽全螢幕變化
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+            
+            function handleFullscreenChange() {
+                const container = document.getElementById('newsTableContainer');
+                if (!document.fullscreenElement) {
+                    // 退出全螢幕時恢復原始樣式
+                    container.style.backgroundColor = '';
+                    container.style.padding = '';
+                    container.style.width = '70%';
+                }
+            }
+        </script>
     </body>
 </html>
