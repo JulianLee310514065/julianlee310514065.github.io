@@ -42,7 +42,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">News</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#photography">Photography</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://thequert.github.io/pages/gear">Gear</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="https://thequert.github.io/pages/blogs">Blogs</a></li>
@@ -167,27 +167,27 @@
 
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
-            <div class="container">
+            <div class="container-fluid">
                 <!-- Featured Project Row-->
                 <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                    <div class="col-xl-4 col-lg-5">
+                    <div class="col-xl-4 col-lg-5" style="padding-left: 5%;">
                         <div class="featured-text text-center text-lg-left">
-                            <h4>Popular Repositories</h4>
+                            <h4>Today's News</h4>
                             <p class="text-black-50 mb-0"></p>
                         </div>
                     </div>
 
                     <!-- READ CSV -->
-                    <div class="mx-auto text-center">
+                    <div class="mx-auto text-center" style="width: 70%;"> <!-- 表格寬度 -->
                         <h2 class="text-white mb-4">最新新聞</h2>
-                        <div style="max-height: 400px; overflow-y: auto;">
+                        <div style="max-height: 600px; overflow-y: auto;">
                             <table class="table table-light align-items-center table-striped" id="newsTable">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th style="width: 50%">標題</th>
                                         <th>時間</th>
+                                        <th style="width: 50%">標題</th>
                                         <th>來源</th>
+                                        <th>連結</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -196,6 +196,10 @@
                             </table>
                         </div>
                     </div>
+            </section>
+        
+
+                    
         <!-- Publications-->
         <section class="publicaions-section bg-light" id="publications">
             <div class="container">
@@ -421,7 +425,7 @@
         
         
         <!-- Signup-->
-        <!-- section class="signup-section" id="signup">
+        <section class="signup-section" id="signup">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
@@ -434,7 +438,9 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
+
+        
         <!-- Contact-->
         <section class="contact-section bg-black" id="signup">
             <div class="container">

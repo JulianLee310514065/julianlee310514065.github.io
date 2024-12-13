@@ -68,13 +68,16 @@ async function loadNewsData() {
             header: true,
             complete: function(results) {
                 const tableBody = document.querySelector('#newsTable tbody');
+                let counter = 1; // 用於生成ID
                 
                 tableBody.innerHTML = results.data
-                    .filter(row => row.ID && row.Title) // 過濾掉空行
+                    .filter(row => row.Time && row.Title) // 過濾掉空行
                     .map(row => `
                         <tr>
-                            <td>${row.ID}</td>
-                            <td style="text-align: left">${row.Title}</td>
+                            <td>${counter++}</td>
+                            <td style="text-align: left">
+                                <a href="${row.Link}" target="_blank">${row.Title}</a>
+                            </td>
                             <td>${row.Time}</td>
                             <td>${row.Source}</td>
                         </tr>

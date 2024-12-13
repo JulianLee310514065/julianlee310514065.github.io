@@ -10400,6 +10400,16 @@ body {
   white-space: nowrap;
 }
 
+#newsTable a {
+  color: #333;              /* 連結顏色 */
+  text-decoration: none;    /* 移除下劃線 */
+}
+
+#newsTable a:hover {
+  color: #007bff;          /* 滑鼠懸停時的顏色 */
+  text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
 /* 滾動條樣式 */
 .table-container::-webkit-scrollbar {
   width: 8px;
