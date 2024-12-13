@@ -56,8 +56,6 @@
 })(jQuery); // End of use strict
 
 
-// ... existing code ...
-
 // 添加新聞數據載入功能
 async function loadNewsData() {
     try {
@@ -94,3 +92,51 @@ async function loadNewsData() {
 
 // 當文檔加載完成時執行
 document.addEventListener('DOMContentLoaded', loadNewsData);
+
+function toggleFullScreen() {
+    const container = document.getElementById('newsTableContainer');
+    
+    if (!document.fullscreenElement) {
+        // 進入全螢幕
+        if (container.requestFullscreen) {
+            container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+            container.webkitRequestFullscreen();
+        } else if (container.msRequestFullscreen) {
+            container.msRequestFullscreen();
+        }
+        
+        // 調整全螢幕時的樣式
+        container.style.backgroundColor = 'white';
+        container.style.padding = '20px';
+        container.style.width = '100%';
+        container.style.height = '100%';
+    } else {
+        // 退出全螢幕
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+}
+
+
+// 監聽全螢幕變化
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+function handleFullscreenChange() {
+    const container = document.getElementById('newsTableContainer');
+    if (!document.fullscreenElement) {
+        // 退出全螢幕時恢復原始樣式
+        container.style.backgroundColor = '';
+        container.style.padding = '';
+        container.style.width = '70%';
+        container.style.height = '';
+    }
+}

@@ -178,8 +178,13 @@
                     </div>
 
                     <!-- READ CSV -->
-                    <div class="mx-auto text-center" style="width: 70%;"> <!-- 表格寬度 -->
-                        <h2 class="text-white mb-4">最新新聞</h2>
+                    <div id="newsTableContainer" class="mx-auto text-center" style="width: 70%;"> <!-- 確保ID在這裡 -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h2 class="text-white">最新新聞</h2>
+                            <button class="btn btn-primary" onclick="toggleFullScreen()">
+                                <i class="fas fa-expand"></i> 全螢幕
+                            </button>
+                        </div>
                         <div style="max-height: 600px; overflow-y: auto;">
                             <table class="table table-light align-items-center table-striped" id="newsTable">
                                 <thead>
@@ -196,7 +201,9 @@
                             </table>
                         </div>
                     </div>
-            </section>
+                </div> <!-- 確保正確關閉所有div -->
+            </div>
+        </section>
         
 
                     
