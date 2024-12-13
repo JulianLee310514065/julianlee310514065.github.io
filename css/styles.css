@@ -9923,7 +9923,9 @@ button.bg-black:focus {
 .text-white {
   color: #fff !important;
 }
-
+.text-white-green {
+  color: #218838 !important;
+}
 .text-primary {
   color: #64a19d !important;
 }
@@ -10444,11 +10446,13 @@ body {
   max-height: 85vh !important; /* 設定為視窗高度的90% */
   height: 85vh !important;
 }
-.btn-primary {
-  font-size: 1.2rem !important; /* 使用 rem 單位 */
+
+/* .btn-primary {
+  font-size: 1.2rem !important;
   padding: 1.25rem 1.25rem;
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
+} */
+
 .btn-primary .fas {
   margin-right: 5px;
 }
@@ -10509,3 +10513,122 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+.error-message {
+  background: #ffe6e6;
+  color: #d63031;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 20%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bot-message {
+  background: #e9ecef;
+  color: black;
+  margin-right: 20%;
+}
+
+.user-message {
+  background: #007bff;
+  color: white;
+  margin-left: 20%;
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.usage-info {
+  text-align: center;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* 當接近限制時的樣式 */
+.usage-info.warning {
+  color: #d63031;
+  font-weight: bold;
+}
+
+/* .btn-danger {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 5px;
+} */
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* 調整按鈕組的樣式 */
+.chat-input {
+  display: flex;
+  gap: 5px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.chat-input textarea {
+  flex: 1;
+}
+
+.chat-input select,
+
+/* .chat-input button {
+  white-space: nowrap;
+} */
+
+/* 清除提示消息的樣式 */
+.message.system-message {
+  background-color: #e2e3e5;
+  color: #383d41;
+  text-align: center;
+  margin: 10px 15%;
+  padding: 8px;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+/* 統一按鈕樣式 */
+.chat-input button {
+  font-size: 1.2rem !important;
+  padding: 1.25rem 1.25rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  white-space: nowrap;
+  min-width: 120px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* 發送按鈕改用綠色 */
+.btn-primary {
+  background-color: #64a19d !important; /* 使用原主題的綠色 */
+  border-color: #64a19d !important;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #558985 !important; /* 稍微深一點的綠色 */
+  border-color: #558985 !important;
+}
+
+/* 清除按鈕樣式 */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  margin-left: 5px;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
