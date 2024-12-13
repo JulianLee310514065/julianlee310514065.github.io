@@ -42,13 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
     usageInfo.className = 'usage-info';
     chatBox.parentElement.insertBefore(usageInfo, chatBox);
 
+    // 添加調試日誌
+    console.log('Usage info element created:', usageInfo);
+    console.log('Parent element:', chatBox.parentElement);
+
     function updateUsageInfo(current, limit) {
+        console.log('Updating usage info:', current, limit); // 添加調試日誌
         usageInfo.textContent = `今日已使用 ${current}/${limit} 次`;
         // 如果快達到限制，改變顏色提醒
         if (current > limit * 0.8) {
             usageInfo.style.color = '#d63031';
         }
-    }
+    }       
 
     function addMessage(content, isUser = false, isError = false) {
         const messageDiv = document.createElement('div');
@@ -88,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             const data = await response.json();
+            console.log('API Response:', data); // 添加調試日誌
             
             if (data.error) {
                 addMessage(data.error, false, true);
@@ -100,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // 更新使用次數顯示
             if (data.usage_info) {
+                console.log('Usage info received:', data.usage_info); // 添加調試日誌
                 updateUsageInfo(
                     data.usage_info.current,
                     data.usage_info.limit
